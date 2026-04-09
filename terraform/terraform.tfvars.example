@@ -1,0 +1,30 @@
+# Copy to terraform.tfvars and fill in values
+# NEVER commit terraform.tfvars — it contains secrets
+
+project_name = "duckly"
+environment  = "production"
+location     = "uksouth"
+
+# Database
+db_admin_username = "ducklyadmin"
+db_admin_password = "CHANGE_ME_strong_password_123!"
+
+# Auth
+jwt_secret = "CHANGE_ME_super_secret_jwt_key_min_32_characters!!"
+
+# Stripe
+stripe_secret_key     = "sk_live_..."
+stripe_webhook_secret = "whsec_..."
+
+# Infrastructure sizing
+app_sku       = "B1"             # App Service Plan (B1 = 1 vCPU, 1.75GB)
+db_sku        = "B_Standard_B2s" # PostgreSQL (B2s = 2 vCPU, 4GB)
+db_storage_mb = 32768            # 32GB
+
+# URLs
+landing_url    = "https://duckly-landing.vercel.app"
+vite_mapbox_token = "pk.eyJ1..."
+
+# Custom domains (optional)
+backend_custom_domain   = ""  # e.g. "api.duckly.co.uk"
+dashboard_custom_domain = ""  # e.g. "app.duckly.co.uk"
